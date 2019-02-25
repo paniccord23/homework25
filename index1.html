@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="main1.css">
+    <title>Zoo</title>
+  </head>
+  <body>
+    <svg viewBox="0 0 225 119">
+      <polygon id="poly" class="polymorpf" points="86,29 124,10 152,107 74,54 ">
+    </svg>
+
+    <script src="./anime.min.js"></script>
+    <script src="./jquery.js"></script>
+    <script>
+      var morpfing = anime({
+        targets: '.polymorpf',
+        points: [
+          { value: '85,1 124,10 152,107 74,54' },
+          { value: '85,1 124,10 152,107 90,116' },
+          { value: '85,1 152,12 152,107 90,116' },
+          { value: '85,1 152,12 189,94 90,116' },
+        ],
+        easing: 'easeOutQuad',
+        duration: 2000,
+        loop: true
+      })
+    </script>
+
+    <script type="text/javascript">
+    $(function() {
+      $("div").each(function(index) {
+        let width  = 150
+        let height = 145
+        let x      = 400
+        let y      = 200
+        $(this).css({
+          "top": y + "px",
+          "left": x + "px",
+          "width":  width + "px",
+          "height": height + "px",
+        })
+        $(this).on("mouseenter", function() {
+          let width  = Math.floor(Math.random() * 1000) + 500
+          let height = Math.floor(Math.random() * 1000) +500
+          let x      = Math.floor(Math.random() * 800) +200
+          let y      = Math.floor(Math.random() * 300) +200
+          $(this).css({
+            "top": y + "px",
+            "left": x + "px",
+            "width":  width + "px",
+            "height": height + "px",
+          })
+        })
+      })
+    })
+  </script>
+
+      <div id="z"><img src="img/z.svg"></div>
+      <div><img src="img/o.svg"></div>
+      <div><img class="side" src="img/0.svg"></div>
+      <div><img src="img/p.svg"></div>
+      <div class="side"><img src="img/a.svg"></div>
+      <div><img src="img/r.svg"></div>
+      <div><img src="img/k.svg"></div>
+
+  </body>
+</html>
