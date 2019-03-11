@@ -6,13 +6,12 @@
     <title>Zoo</title>
   </head>
   <body>
-    <svg viewBox="0 0 225 119">
+    <!-- <svg viewBox="0 0 225 119">
       <polygon id="poly" class="polymorpf" points="86,29 124,10 152,107 74,54 ">
-    </svg>
+    </svg> -->
 
-    <script src="./anime.min.js"></script>
-    <script src="./jquery.js"></script>
-    <script>
+
+    <!-- <script>
       var morpfing = anime({
         targets: '.polymorpf',
         points: [
@@ -25,44 +24,57 @@
         duration: 2000,
         loop: true
       })
+    </script> -->
+
+    <!-- <script type="text/javascript">
+    window.onload = function() {
+// Animate
+var anim = function(x,y,maxX,maxY,el) {
+  setInterval(function() {
+    ;(y>=maxY)?(y=0,(x=(x>=maxX)?0:x+1)):(y+=1);
+    el.style.backgroundPosition = "-"+x+"00% -"+y+"00%";
+  }, 100);
+};
+
+// Fly
+var bird = document.getElementById('bird');
+flybezier({
+  path: "M129.391,130.778c14.768,3.404,41.872,17.266,46.836-13.813s3.885-41.224,45.757-43.814 s89.787-21.583,5.18-22.447s-105.327,5.396-124.752-13.382S70.9,20.919,51.691,22.43s-14.245-2.158-22.015-8.202 s-42.087-30.865-23.958,6.259s2.59,66.909,49.642,53.743S60.108,114.806,129.391,130.778z",
+  areaWidth: 600,
+  areaHeight: 400,
+  calcAngle: false
+}, function(x,y,angle) {
+  bird.style.transform = "translateX("+x+"px) translateY("+y+"px) rotateZ("+(angle)+"deg)";
+});
+
+anim(0,0,0,1, bird);
+}
+    </script> -->
+    <script>
+      let letterZ = document.getElementById("outside");
+      letterZ.style.position =  "relative";
+      letterZ.style.left =  "100px";
+      function moveRight() {
+        let left = letterZ.style.left;
+        if(let != "") = parseInt(left);
+        else left = 100;
+        left += 50;
+        letterZ.style.left = left + "px";
+      }
+      let right = document.getElementById("right");
+      right.addEventListener("mouseover", moveRight(), false)
     </script>
 
-    <script type="text/javascript">
-    $(function() {
-      $("div").each(function(index) {
-        let width  = 150
-        let height = 145
-        let x      = 400
-        let y      = 200
-        $(this).css({
-          "top": y + "px",
-          "left": x + "px",
-          "width":  width + "px",
-          "height": height + "px",
-        })
-        $(this).on("mouseenter", function() {
-          let width  = Math.floor(Math.random() * 1000) + 500
-          let height = Math.floor(Math.random() * 1000) +500
-          let x      = Math.floor(Math.random() * 800) +200
-          let y      = Math.floor(Math.random() * 300) +200
-          $(this).css({
-            "top": y + "px",
-            "left": x + "px",
-            "width":  width + "px",
-            "height": height + "px",
-          })
-        })
-      })
-    })
-  </script>
+      <span id="outside"><span id="left">-----</span><img  src="img/z.svg"><span id="right">-----</span></span>
+      <!-- <div id="b"><img src="img/o.svg"></div>
+      <div id="c"><img class="side" src="img/0.svg"></div>
+      <div id="d"><img src="img/p.svg"></div>
+      <div id="e" class="side"><img src="img/a.svg"></div>
+      <div id="f"><img src="img/r.svg"></div>
+      <div id="g"><img src="img/k.svg"></div> -->
 
-      <div id="z"><img src="img/z.svg"></div>
-      <div><img src="img/o.svg"></div>
-      <div><img class="side" src="img/0.svg"></div>
-      <div><img src="img/p.svg"></div>
-      <div class="side"><img src="img/a.svg"></div>
-      <div><img src="img/r.svg"></div>
-      <div><img src="img/k.svg"></div>
 
   </body>
+  <script src="./anime.min.js"></script>
+  <script src="./jquery.js"></script>
 </html>
